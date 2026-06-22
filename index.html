@@ -1,116 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #e8f5e9;
-        margin: 0;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background:#e8f5e9;
+    margin:0;
+}
 
-    header {
-        background-color: #2e7d32;
-        color: white;
-        text-align: center;
-        padding: 30px;
-    }
+header {
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
 
-    .blog {
-        width: 80%;
-        margin: 20px auto;
-    }
+.blog {
+    width:80%;
+    margin:20px auto;
+}
 
-    .conteudo {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
+.post {
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:25px;
+    box-shadow:0 3px 10px #aaa;
+}
 
-    img {
-        width: 250px;
-        display: block;
-        margin: auto;
-        border-radius: 10px;
-    }
+.post img {
+    width:100%;
+    max-height:300px;
+    object-fit:cover;
+    border-radius:10px;
+}
 
-    h2 {
-        color: #2e7d32;
-    }
+h2 {
+    color:#2e7d32;
+}
 
-    p {
-        font-size: 18px;
-        line-height: 1.5;
-    }
+button {
+    padding:10px;
+    border:0;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:10px;
+}
 
-    button {
-        padding: 10px 15px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        margin-right: 10px;
-        font-size: 16px;
-    }
+.like {
+    background:#4caf50;
+    color:white;
+}
 
-    .curtir {
-        background-color: #4caf50;
-        color: white;
-    }
+.dislike {
+    background:#e53935;
+    color:white;
+}
 
-    .descurtir {
-        background-color: #e53935;
-        color: white;
-    }
-
-    .ativo {
-        opacity: 0.6;
-    }
-
-    footer {
-        background-color: #2e7d32;
-        color: white;
-        text-align: center;
-        padding: 15px;
-        margin-top: 20px;
-    }
+footer {
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
 
 </style>
 
 </head>
 
-
 <body>
 
 
 <header>
-    <h1>Informações de Esportes</h1>
-    <p>Tudo sobre futebol, vôlei, basquete e muito mais!</p>
+<h1>Informações de Esportes</h1>
+<p>Tudo sobre futebol, vôlei, basquete e muito mais!</p>
 </header>
-
 
 
 <div class="blog">
 
 
-<div class="conteudo">
+<div class="post">
 
-<img src="https://cdn-icons-png.flaticon.com/512/53/53283.png">
+<img src="https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d">
 
-<h2>Benefícios do Esporte</h2>
+<h2>⚽ Futebol</h2>
 
 <p>
-A prática de esportes ajuda a melhorar a saúde física e mental.
-Além de fortalecer os músculos, aumenta a disposição e melhora
-o condicionamento físico.
+O futebol é um dos esportes mais praticados do mundo.
+Ele melhora resistência, coordenação e trabalho em equipe.
 </p>
 
-
-<button class="curtir" onclick="curtir(this)">
+<button class="like" onclick="votar(this)">
 👍 Curtir <span>0</span>
 </button>
 
-<button class="descurtir" onclick="descurtir(this)">
+<button class="dislike" onclick="votar(this)">
+👎 Descurtir <span>0</span>
+</button>
+
+</div>
+
+
+
+<div class="post">
+
+<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc">
+
+<h2>🏀 Basquete</h2>
+
+<p>
+O basquete trabalha velocidade, agilidade,
+salto e raciocínio rápido.
+</p>
+
+<button class="like" onclick="votar(this)">
+👍 Curtir <span>0</span>
+</button>
+
+<button class="dislike" onclick="votar(this)">
 👎 Descurtir <span>0</span>
 </button>
 
@@ -119,66 +129,45 @@ o condicionamento físico.
 
 
 
-<div class="conteudo">
+<div class="post">
 
-<h2>Futebol</h2>
+<img src="https://images.unsplash.com/photo-1612872087720-bb876e2bf7d1">
 
-<p>
-O futebol é um dos esportes mais populares do mundo.
-Ele trabalha resistência, coordenação e trabalho em equipe.
-</p>
-
-
-<button class="curtir" onclick="curtir(this)">
-👍 Curtir <span>0</span>
-</button>
-
-<button class="descurtir" onclick="descurtir(this)">
-👎 Descurtir <span>0</span>
-</button>
-
-</div>
-
-
-
-
-<div class="conteudo">
-
-<h2>Basquete</h2>
+<h2>🏐 Vôlei</h2>
 
 <p>
-O basquete ajuda no desenvolvimento da agilidade,
-velocidade e raciocínio rápido durante as partidas.
-</p>
-
-
-<button class="curtir" onclick="curtir(this)">
-👍 Curtir <span>0</span>
-</button>
-
-<button class="descurtir" onclick="descurtir(this)">
-👎 Descurtir <span>0</span>
-</button>
-
-</div>
-
-
-
-<div class="conteudo">
-
-<h2>Vôlei</h2>
-
-<p>
-O vôlei melhora reflexos, equilíbrio e comunicação
+O vôlei ajuda no equilíbrio, reflexos e comunicação
 entre os jogadores.
 </p>
 
-
-<button class="curtir" onclick="curtir(this)">
+<button class="like" onclick="votar(this)">
 👍 Curtir <span>0</span>
 </button>
 
-<button class="descurtir" onclick="descurtir(this)">
+<button class="dislike" onclick="votar(this)">
+👎 Descurtir <span>0</span>
+</button>
+
+</div>
+
+
+
+<div class="post">
+
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+
+<h2>🏋️ Benefícios do Esporte</h2>
+
+<p>
+A prática de exercícios melhora a saúde,
+a disposição e ajuda na qualidade de vida.
+</p>
+
+<button class="like" onclick="votar(this)">
+👍 Curtir <span>0</span>
+</button>
+
+<button class="dislike" onclick="votar(this)">
 👎 Descurtir <span>0</span>
 </button>
 
@@ -197,48 +186,25 @@ entre os jogadores.
 
 <script>
 
-function curtir(botao){
+function votar(botao){
 
-    let post = botao.parentElement;
-
-    if(post.classList.contains("votou")){
-        return;
-    }
+let post = botao.parentElement;
 
 
-    let numero = botao.querySelector("span");
-
-    numero.innerHTML = Number(numero.innerHTML) + 1;
-
-
-    post.classList.add("votou");
-
-    botao.classList.add("ativo");
-
+if(post.dataset.voto){
+alert("Você já votou nesse post!");
+return;
 }
 
 
+let numero = botao.querySelector("span");
 
-function descurtir(botao){
-
-    let post = botao.parentElement;
-
-    if(post.classList.contains("votou")){
-        return;
-    }
+numero.innerHTML = Number(numero.innerHTML)+1;
 
 
-    let numero = botao.querySelector("span");
-
-    numero.innerHTML = Number(numero.innerHTML) + 1;
-
-
-    post.classList.add("votou");
-
-    botao.classList.add("ativo");
+post.dataset.voto = "sim";
 
 }
-
 
 </script>
 
