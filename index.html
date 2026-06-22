@@ -1,84 +1,247 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>informações de esportes</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e8f5e9;
-            margin: 0;
-        }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e8f5e9;
+        margin: 0;
+    }
 
-        header {
-            background-color: #2e7d32;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
+    header {
+        background-color: #2e7d32;
+        color: white;
+        text-align: center;
+        padding: 30px;
+    }
 
-        .conteudo {
-            width: 80%;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
+    .blog {
+        width: 80%;
+        margin: 20px auto;
+    }
 
-        img {
-            width: 250px;
-            display: block;
-            margin: auto;
-            border-radius: 10px;
-        }
+    .conteudo {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
 
-        h2 {
-            color: #2e7d32;
-        }
+    img {
+        width: 250px;
+        display: block;
+        margin: auto;
+        border-radius: 10px;
+    }
 
-        p {
-            font-size: 18px;
-            line-height: 1.5;
-        }
+    h2 {
+        color: #2e7d32;
+    }
 
-        footer {
-            background-color: #2e7d32;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-        }
-    </style>
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    .curtir {
+        background-color: #4caf50;
+        color: white;
+    }
+
+    .descurtir {
+        background-color: #e53935;
+        color: white;
+    }
+
+    .ativo {
+        opacity: 0.6;
+    }
+
+    footer {
+        background-color: #2e7d32;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+</style>
+
 </head>
+
 
 <body>
 
-    <header>
-        <h1> informações de esportes</h1>
-        <p>Tudo sobre futebol, vôlei, basquete e muito mais!</p>
-    </header>
 
-    <div class="conteudo">
-        <img src="https://cdn-icons-png.flaticon.com/512/53/53283.png" alt="Bola de futebol">
+<header>
+    <h1>Informações de Esportes</h1>
+    <p>Tudo sobre futebol, vôlei, basquete e muito mais!</p>
+</header>
 
-        <h2>Benefícios do Esporte</h2>
 
-        <p>
-            A prática de esportes ajuda a melhorar a saúde física e mental.
-            Além de fortalecer os músculos, ela aumenta a disposição,
-            melhora o condicionamento físico e contribui para uma vida mais saudável.
-        </p>
 
-        <p>
-            Seja no futebol, vôlei, basquete ou corrida, o importante é se manter ativo
-            e praticar atividades físicas regularmente.
-        </p>
-    </div>
+<div class="blog">
 
-    <footer>
-        © 2026 - informações de esportes
-    </footer>
+
+<div class="conteudo">
+
+<img src="https://cdn-icons-png.flaticon.com/512/53/53283.png">
+
+<h2>Benefícios do Esporte</h2>
+
+<p>
+A prática de esportes ajuda a melhorar a saúde física e mental.
+Além de fortalecer os músculos, aumenta a disposição e melhora
+o condicionamento físico.
+</p>
+
+
+<button class="curtir" onclick="curtir(this)">
+👍 Curtir <span>0</span>
+</button>
+
+<button class="descurtir" onclick="descurtir(this)">
+👎 Descurtir <span>0</span>
+</button>
+
+</div>
+
+
+
+
+<div class="conteudo">
+
+<h2>Futebol</h2>
+
+<p>
+O futebol é um dos esportes mais populares do mundo.
+Ele trabalha resistência, coordenação e trabalho em equipe.
+</p>
+
+
+<button class="curtir" onclick="curtir(this)">
+👍 Curtir <span>0</span>
+</button>
+
+<button class="descurtir" onclick="descurtir(this)">
+👎 Descurtir <span>0</span>
+</button>
+
+</div>
+
+
+
+
+<div class="conteudo">
+
+<h2>Basquete</h2>
+
+<p>
+O basquete ajuda no desenvolvimento da agilidade,
+velocidade e raciocínio rápido durante as partidas.
+</p>
+
+
+<button class="curtir" onclick="curtir(this)">
+👍 Curtir <span>0</span>
+</button>
+
+<button class="descurtir" onclick="descurtir(this)">
+👎 Descurtir <span>0</span>
+</button>
+
+</div>
+
+
+
+<div class="conteudo">
+
+<h2>Vôlei</h2>
+
+<p>
+O vôlei melhora reflexos, equilíbrio e comunicação
+entre os jogadores.
+</p>
+
+
+<button class="curtir" onclick="curtir(this)">
+👍 Curtir <span>0</span>
+</button>
+
+<button class="descurtir" onclick="descurtir(this)">
+👎 Descurtir <span>0</span>
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<footer>
+© 2026 - Informações de Esportes
+</footer>
+
+
+
+<script>
+
+function curtir(botao){
+
+    let post = botao.parentElement;
+
+    if(post.classList.contains("votou")){
+        return;
+    }
+
+
+    let numero = botao.querySelector("span");
+
+    numero.innerHTML = Number(numero.innerHTML) + 1;
+
+
+    post.classList.add("votou");
+
+    botao.classList.add("ativo");
+
+}
+
+
+
+function descurtir(botao){
+
+    let post = botao.parentElement;
+
+    if(post.classList.contains("votou")){
+        return;
+    }
+
+
+    let numero = botao.querySelector("span");
+
+    numero.innerHTML = Number(numero.innerHTML) + 1;
+
+
+    post.classList.add("votou");
+
+    botao.classList.add("ativo");
+
+}
+
+
+</script>
+
 
 </body>
 </html>
