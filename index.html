@@ -11,99 +11,72 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #e8f5e9;
-    margin: 0;
+    background:#e8f5e9;
+    margin:0;
 }
 
 header {
-    background: #2e7d32;
-    color: white;
-    text-align: center;
-    padding: 30px;
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:30px;
 }
 
 .blog {
-    width: 80%;
-    margin: 25px auto;
+    width:80%;
+    margin:25px auto;
 }
-
 
 .post {
-
-    background: white;
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px #aaa;
-
+    background:white;
+    padding:20px;
+    margin-bottom:25px;
+    border-radius:12px;
+    box-shadow:0 4px 10px #aaa;
 }
-
 
 .post img {
-
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:12px;
 }
-
 
 h2 {
-
-color:#2e7d32;
-
+    color:#2e7d32;
 }
-
 
 p {
-
-font-size:18px;
-
+    font-size:18px;
 }
-
 
 button {
-
-padding:10px 15px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-margin-right:10px;
-
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:10px;
 }
-
 
 .curtir {
-
-background:#4caf50;
-color:white;
-
+    background:#4caf50;
+    color:white;
 }
-
 
 .descurtir {
-
-background:#e53935;
-color:white;
-
+    background:#e53935;
+    color:white;
 }
-
 
 .ativo {
-
-opacity:0.5;
-
+    opacity:0.5;
 }
 
-
 footer {
-
-background:#2e7d32;
-color:white;
-text-align:center;
-padding:15px;
-
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:15px;
 }
 
 </style>
@@ -130,13 +103,13 @@ padding:15px;
 
 <div class="post">
 
-<img src="https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d">
+<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974" alt="Futebol">
 
 <h2>⚽ Futebol</h2>
 
 <p>
 O futebol melhora resistência, coordenação e trabalho em equipe.
-É um dos esportes mais praticados no mundo.
+É um dos esportes mais populares do mundo.
 </p>
 
 
@@ -148,7 +121,6 @@ O futebol melhora resistência, coordenação e trabalho em equipe.
 👎 Descurtir <span>0</span>
 </button>
 
-
 </div>
 
 
@@ -156,13 +128,13 @@ O futebol melhora resistência, coordenação e trabalho em equipe.
 
 <div class="post">
 
-<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc">
+<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc" alt="Basquete">
 
 <h2>🏀 Basquete</h2>
 
 <p>
-O basquete ajuda no desenvolvimento da velocidade,
-agilidade e raciocínio rápido.
+O basquete ajuda na velocidade, agilidade,
+salto e raciocínio rápido.
 </p>
 
 
@@ -174,7 +146,6 @@ agilidade e raciocínio rápido.
 👎 Descurtir <span>0</span>
 </button>
 
-
 </div>
 
 
@@ -183,12 +154,12 @@ agilidade e raciocínio rápido.
 
 <div class="post">
 
-<img src="https://images.unsplash.com/photo-1612872087720-bb876e2bf7d1">
+<img src="https://images.unsplash.com/photo-1592656094267-764a45160876" alt="Vôlei">
 
 <h2>🏐 Vôlei</h2>
 
 <p>
-O vôlei trabalha reflexos, equilíbrio e comunicação
+O vôlei melhora reflexos, equilíbrio e comunicação
 entre os jogadores.
 </p>
 
@@ -201,7 +172,6 @@ entre os jogadores.
 👎 Descurtir <span>0</span>
 </button>
 
-
 </div>
 
 
@@ -210,7 +180,7 @@ entre os jogadores.
 
 <div class="post">
 
-<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48" alt="Treino">
 
 <h2>🏋️ Benefícios do Esporte</h2>
 
@@ -227,7 +197,6 @@ aumenta energia e qualidade de vida.
 <button class="descurtir" onclick="votar(this)">
 👎 Descurtir <span>0</span>
 </button>
-
 
 </div>
 
@@ -263,14 +232,12 @@ return;
 
 let numero = botao.querySelector("span");
 
-
 numero.innerHTML = Number(numero.innerHTML) + 1;
 
 
 post.classList.add("votou");
 
 botao.classList.add("ativo");
-
 
 }
 
@@ -279,5 +246,4 @@ botao.classList.add("ativo");
 
 
 </body>
-
 </html>
