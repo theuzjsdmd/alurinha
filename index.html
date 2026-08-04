@@ -1,249 +1,283 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Informações de Esportes</title>
-
 <style>
+:root {
+    --cor-primaria: #2e7d32;
+    --cor-secundaria: #4caf50;
+    --cor-fundo: #e8f5e9;
+    --cor-texto: #151428;
+    --cor-contraste: #ffffff;
+    --cor-botao: #f9f9f9;
+    --cor-borda-clara: #c8e6c9;
+    --fonte-texto: 'Segoe UI', Arial, sans-serif;
+}
+
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tema-escuro {
+    --cor-primaria: #81c784;
+    --cor-secundaria: #66bb6a;
+    --cor-fundo: #1b2e1b;
+    --cor-texto: #ffffff;
+    --cor-contraste: #e8f5e9;
+    --cor-botao: #2e3d2e;
+    --cor-borda-clara: #3d5c3d;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background:#e8f5e9;
-    margin:0;
+    font-family: var(--fonte-texto);
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
 header {
-    background:#2e7d32;
-    color:white;
-    text-align:center;
-    padding:30px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-contraste);
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    margin: 15px 0 0;
+    font-size: 18px;
 }
 
 .blog {
-    width:80%;
-    margin:25px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 25px auto;
+    max-width: 1200px;
 }
 
 .post {
-    background:white;
-    padding:20px;
-    margin-bottom:25px;
-    border-radius:12px;
-    box-shadow:0 4px 10px #aaa;
+    background-color: var(--cor-contraste);
+    color: var(--cor-texto);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    flex: 1 1 45%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tema-escuro .post {
+    background-color: #243024;
 }
 
 .post img {
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    border-radius:12px;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 h2 {
-    color:#2e7d32;
+    color: var(--cor-primaria);
+    margin: 0;
+    font-size: 24px;
 }
 
 p {
-    font-size:18px;
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.interactions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 button {
-    padding:10px 15px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    margin-right:10px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--fonte-texto);
+    font-size: 15px;
+    transition: all 0.2s ease;
 }
 
 .curtir {
-    background:#4caf50;
-    color:white;
+    background: var(--cor-secundaria);
+    color: white;
 }
 
 .descurtir {
-    background:#e53935;
-    color:white;
+    background: #e53935;
+    color: white;
+}
+
+.curtir:hover, .descurtir:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
 }
 
 .ativo {
-    opacity:0.5;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.btn-tema-escuro {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 28px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--cor-primaria);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.btn-tema-escuro:hover {
+    transform: scale(1.1);
 }
 
 footer {
-    background:#2e7d32;
-    color:white;
-    text-align:center;
-    padding:15px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-contraste);
+    text-align: center;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 30px;
 }
 
+@media (max-width: 700px) {
+    body {
+        padding: 12px;
+    }
+    header h1 {
+        font-size: 32px;
+    }
+    .post {
+        flex: 1 1 100%;
+    }
+    .post img {
+        height: 180px;
+    }
+}
 </style>
-
 </head>
-
-
 <body>
 
-
 <header>
-
-<h1>Informações de Esportes</h1>
-
-<p>Tudo sobre futebol, vôlei, basquete e muito mais!</p>
-
+    <h1>Informações de Esportes</h1>
+    <p>Tudo sobre futebol, vôlei, basquete e muito mais!</p>
 </header>
-
-
 
 <div class="blog">
 
+    <div class="post">
+        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974" alt="Futebol">
+        <h2>⚽ Futebol</h2>
+        <p>
+            O futebol melhora resistência, coordenação e trabalho em equipe.
+            É um dos esportes mais populares do mundo.
+        </p>
+        <div class="interactions">
+            <button class="curtir" onclick="votar(this)">👍 Curtir <span>0</span></button>
+            <button class="descurtir" onclick="votar(this)">👎 Descurtir <span>0</span></button>
+        </div>
+    </div>
 
+    <div class="post">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc" alt="Basquete">
+        <h2>🏀 Basquete</h2>
+        <p>
+            O basquete ajuda na velocidade, agilidade,
+            salto e raciocínio rápido.
+        </p>
+        <div class="interactions">
+            <button class="curtir" onclick="votar(this)">👍 Curtir <span>0</span></button>
+            <button class="descurtir" onclick="votar(this)">👎 Descurtir <span>0</span></button>
+        </div>
+    </div>
 
-<div class="post">
+    <div class="post">
+        <img src="https://images.unsplash.com/photo-1592656094267-764a45160876" alt="Vôlei">
+        <h2>🏐 Vôlei</h2>
+        <p>
+            O vôlei melhora reflexos, equilíbrio e comunicação
+            entre os jogadores.
+        </p>
+        <div class="interactions">
+            <button class="curtir" onclick="votar(this)">👍 Curtir <span>0</span></button>
+            <button class="descurtir" onclick="votar(this)">👎 Descurtir <span>0</span></button>
+        </div>
+    </div>
 
-<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974" alt="Futebol">
-
-<h2>⚽ Futebol</h2>
-
-<p>
-O futebol melhora resistência, coordenação e trabalho em equipe.
-É um dos esportes mais populares do mundo.
-</p>
-
-
-<button class="curtir" onclick="votar(this)">
-👍 Curtir <span>0</span>
-</button>
-
-<button class="descurtir" onclick="votar(this)">
-👎 Descurtir <span>0</span>
-</button>
-
-</div>
-
-
-
-
-<div class="post">
-
-<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc" alt="Basquete">
-
-<h2>🏀 Basquete</h2>
-
-<p>
-O basquete ajuda na velocidade, agilidade,
-salto e raciocínio rápido.
-</p>
-
-
-<button class="curtir" onclick="votar(this)">
-👍 Curtir <span>0</span>
-</button>
-
-<button class="descurtir" onclick="votar(this)">
-👎 Descurtir <span>0</span>
-</button>
-
-</div>
-
-
-
-
-
-<div class="post">
-
-<img src="https://images.unsplash.com/photo-1592656094267-764a45160876" alt="Vôlei">
-
-<h2>🏐 Vôlei</h2>
-
-<p>
-O vôlei melhora reflexos, equilíbrio e comunicação
-entre os jogadores.
-</p>
-
-
-<button class="curtir" onclick="votar(this)">
-👍 Curtir <span>0</span>
-</button>
-
-<button class="descurtir" onclick="votar(this)">
-👎 Descurtir <span>0</span>
-</button>
+    <div class="post">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48" alt="Treino">
+        <h2>🏋️ Musculação</h2>
+        <p>
+            Praticar musculação melhora a saúde física e mental,
+            aumenta energia e qualidade de vida.
+        </p>
+        <div class="interactions">
+            <button class="curtir" onclick="votar(this)">👍 Curtir <span>0</span></button>
+            <button class="descurtir" onclick="votar(this)">👎 Descurtir <span>0</span></button>
+        </div>
+    </div>
 
 </div>
-
-
-
-
-
-<div class="post">
-
-<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48" alt="Treino">
-
-<h2>🏋️ musculação</h2>
-
-<p>
-Praticar musculação melhora a saúde física e mental,
-aumenta energia e qualidade de vida.
-</p>
-
-
-<button class="curtir" onclick="votar(this)">
-👍 Curtir <span>0</span>
-</button>
-
-<button class="descurtir" onclick="votar(this)">
-👎 Descurtir <span>0</span>
-</button>
-
-</div>
-
-
-
-</div>
-
-
 
 <footer>
-
-© 2026 - Informações de Esportes
-
+    © 2026 - Informações de Esportes
 </footer>
 
-
+<button class="btn-tema-escuro" onclick="alternarTema()" title="Alternar tema">🌙</button>
 
 <script>
-
-function votar(botao){
-
-let post = botao.parentElement;
-
-
-if(post.classList.contains("votou")){
-
-alert("Você já votou nesse post!");
-
-return;
-
+function votar(botao) {
+    let post = botao.closest(".post");
+    if (post.classList.contains("votou")) {
+        alert("Você já votou nesse post!");
+        return;
+    }
+    let numero = botao.querySelector("span");
+    numero.innerHTML = Number(numero.innerHTML) + 1;
+    post.classList.add("votou");
+    botao.classList.add("ativo");
 }
 
-
-let numero = botao.querySelector("span");
-
-numero.innerHTML = Number(numero.innerHTML) + 1;
-
-
-post.classList.add("votou");
-
-botao.classList.add("ativo");
-
+function alternarTema() {
+    document.body.classList.toggle("tema-escuro");
+    const botao = document.querySelector(".btn-tema-escuro");
+    botao.textContent = document.body.classList.contains("tema-escuro") ? "☀️" : "🌙";
 }
-
 </script>
 
-
+</body>
+</html>
 
 </body>
 </html>
